@@ -10,7 +10,7 @@ module Wikidatum::Utils
     when 'somevalue'
       Wikidatum::DataType::Base.marshal_load('somevalue', nil)
     when 'value'
-      Wikidatum::DataType::Base.marshal_load(json['property']['data-type'], json['value']['content'])
+      Wikidatum::DataType::Base.marshal_load(json['property']['data_type'] || json['property']['data-type'], json['value']['content'])
     end
   end
 

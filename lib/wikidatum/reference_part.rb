@@ -49,7 +49,7 @@ class Wikidatum::ReferencePart
   def self.marshal_load(part_json)
     Wikidatum::ReferencePart.new(
       property_id: part_json.dig('property', 'id'),
-      data_type: part_json.dig('property', 'data-type'),
+      data_type: part_json.dig('property', 'data_type') || part_json.dig('property', 'data-type'),
       value: Wikidatum::Utils.ingest_snak(part_json)
     )
   end
